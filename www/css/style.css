@@ -1,0 +1,38 @@
+/* Empty. Add your own CSS if you like */
+.border-none{
+	border:none;
+}
+
+.margin-top-medium{
+	margin-top: 20px;
+}
+
+.full-width{
+	width: 100%;
+}
+
+.half-width{
+	width: 50%;
+}
+
+.align-center{
+	text-align: center;
+}
+.font-small{
+	font-size: 0.9em !important;
+}
+
+ion-content div.scroll{
+	min-height: 100%;
+}
+
+.images{
+	position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.subImage{
+	height: 140px;
+}

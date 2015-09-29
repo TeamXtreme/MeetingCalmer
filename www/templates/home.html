@@ -1,0 +1,72 @@
+<ion-view view-title="Home">
+	<ion-header-bar align-title="center" class="bar-assertive">  
+	    <div class="title">
+	       	<div class="inline">Meeting Calmer</div>
+	    </div>
+
+	    <div class="buttons">
+	    	<i class="icon ion-refresh button button-clear padding" ng-if="data.enable_calmer" ng-click="scanNow()"></i>
+	      <!-- <button class="button button-clear">Settings</button -->
+	    </div>
+  	</ion-header-bar>
+
+	<ion-content has-subheader="false" has-bouncing="true" class="padding">
+		<div class="padding-top assertive">Settings</div>
+		<div class="item item-toggle border-none">
+	     	Enable Meeting Calmer:
+	     	<label class="toggle toggle-assertive">
+	       		<input type="checkbox" ng-model="data.enable_calmer">
+	       		<div class="track">
+	        		<div class="handle"></div>
+	       		</div>
+	     	</label>
+	  	</div>
+	  	<div ng-if="data.enable_calmer">
+			<div class="item item-toggle border-none">
+		     	Allow Vibration:
+		     	<label class="toggle toggle-assertive">
+		       		<input type="checkbox" ng-model="data.enable_vibration">
+		       		<div class="track">
+		        		<div class="handle"></div>
+		       		</div>
+		     	</label>
+		  	</div>
+		  	<!-- <label class="item item-input item-select border-none">
+			    <div class="input-label">
+			     	Refresh Interval:
+			    </div>
+			    <select ng-model="data.refresh_interval">
+			    	<option value="15">15 mins</option>
+				    <option value="30">30 mins</option>
+				    <option value="60">1 hour</option>
+				    <option value="180">3 hours</option>
+				    <option value="360">6 hours</option>
+				    <option value="720">12 hours</option>
+				    <option value="1440">1 day</option>
+				    <option value="10080">1 week</option>
+			    </select>
+			</label>
+			<div class="full-width align-center">
+				<button class="button button-outline button-assertive margin-top-medium half-width" ng-click="submitChanges()">
+					Submit
+				</button>
+			</div>-->
+			
+	  	</div>
+
+	  	<div class="images">
+	  		<img src="img/shh.png" class="full-width">
+	  		<img ng-if="data.enable_calmer" src="img/smiley_happy.png" class="subImage">
+	  		<img ng-if="!data.enable_calmer" src="img/smiley_surprised.png" class="subImage">
+	  	</div>
+
+	</ion-content>
+	<ion-footer-bar align-title="left" class="bar-stable">
+		<div class="title font-small" ng-if="data.nextScheduledScan">
+			Next Scheduled Scan: {{data.nextScheduledScan}}
+		</div>
+		<div class="title font-small" ng-if="!data.nextScheduledScan">
+			 Version 1.0
+		</div>
+	</ion-footer-bar>
+</ion-view>
